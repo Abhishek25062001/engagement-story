@@ -1,10 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { motionScrub, setupGsap } from "@/lib/animation";
 
 export function HeroOpeningInteraction() {
   useEffect(() => {
@@ -19,6 +16,8 @@ export function HeroOpeningInteraction() {
     if (reduceMotion.matches) {
       return;
     }
+
+    const { gsap } = setupGsap();
 
     const context = gsap.context(() => {
       const stage = hero.querySelector(".hero-stage");
@@ -64,7 +63,7 @@ export function HeroOpeningInteraction() {
           trigger: hero,
           start: "top top",
           end: "+=120%",
-          scrub: 1.4,
+          scrub: motionScrub.cinematic,
           pin: true,
           anticipatePin: 1,
           invalidateOnRefresh: true,
