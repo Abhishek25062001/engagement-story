@@ -1,10 +1,12 @@
 import { Cluster, Frame, Stack, Surface } from "@/components/composition";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
+import { HeroOpeningInteraction } from "@/components/sections/HeroOpeningInteraction";
 import { Typography } from "@/components/ui/Typography";
 
 export function HeroSection() {
   return (
     <SectionWrapper id="hero" className="hero-scene">
+      <HeroOpeningInteraction />
       <Stack className="hero-stage" gap="xl">
         <Surface
           as="article"
