@@ -1,50 +1,91 @@
-import {
-  ContentBlock,
-  Grid,
-  MediaBlock,
-  SectionHeader,
-  Stack,
-} from "@/components/composition";
+import { SectionAnimation } from "@/components/animation";
+import { Grid, Stack } from "@/components/composition";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
-import { LuxuryCard, Typography } from "@/components/ui";
+import { Divider, LuxuryCard, Typography } from "@/components/ui";
 
 export function CoupleSection() {
   return (
-    <SectionWrapper id="couple">
-      <Stack gap="lg">
-        <SectionHeader eyebrow="Couple" title="CoupleSection" />
-        <Grid columns="two">
-          <LuxuryCard as="article" variant="minimal" padding="sm">
-            <Stack gap="md">
-              <MediaBlock>
-                <Typography variant="caption">
-                  Profile media placeholder
+    <SectionWrapper id="couple" className="story-section story-section-couple">
+      <Stack className="story-insert-shell" gap="xl">
+        <SectionAnimation variant="fadeUp">
+          <Stack className="story-section-intro" gap="sm">
+            <Typography variant="overline">The Couple</Typography>
+            <Divider className="story-divider" decorative tone="gold" />
+            <Typography className="story-section-copy" variant="body">
+              A quiet beginning, marked with family blessings and a promise held
+              with grace.
+            </Typography>
+          </Stack>
+        </SectionAnimation>
+
+        <SectionAnimation variant="reveal">
+          <LuxuryCard
+            as="article"
+            aria-labelledby="couple-title"
+            className="story-insert story-couple-insert"
+            padding="lg"
+            variant="paper"
+          >
+            <span aria-hidden="true" className="story-insert-corner top-left" />
+            <span
+              aria-hidden="true"
+              className="story-insert-corner top-right"
+            />
+            <span
+              aria-hidden="true"
+              className="story-insert-corner bottom-left"
+            />
+            <span
+              aria-hidden="true"
+              className="story-insert-corner bottom-right"
+            />
+
+            <Grid className="story-couple-grid" columns="two">
+              <Stack className="story-person" gap="md">
+                <span aria-hidden="true" className="story-monogram">
+                  SJ
+                </span>
+                <Typography
+                  as="h2"
+                  className="story-person-name"
+                  id="couple-title"
+                  variant="heading"
+                >
+                  Sudesh Jaiswal
                 </Typography>
-              </MediaBlock>
-              <ContentBlock>
-                <Typography variant="title">Person placeholder</Typography>
-                <Typography variant="body">
-                  Short profile placeholder for future couple copy.
+              </Stack>
+
+              <Stack className="story-person" gap="md">
+                <span aria-hidden="true" className="story-monogram">
+                  HJ
+                </span>
+                <Typography
+                  as="p"
+                  className="story-person-name"
+                  variant="heading"
+                >
+                  Hemlata Jaiswal
                 </Typography>
-              </ContentBlock>
+              </Stack>
+            </Grid>
+
+            <Stack className="story-couple-symbol" gap="sm">
+              <Divider
+                className="story-divider story-divider-short"
+                decorative
+                tone="gold"
+              />
+              <Typography className="story-ampersand" variant="title">
+                &amp;
+              </Typography>
+              <Divider
+                className="story-divider story-divider-short"
+                decorative
+                tone="gold"
+              />
             </Stack>
           </LuxuryCard>
-          <LuxuryCard as="article" variant="minimal" padding="sm">
-            <Stack gap="md">
-              <MediaBlock>
-                <Typography variant="caption">
-                  Profile media placeholder
-                </Typography>
-              </MediaBlock>
-              <ContentBlock>
-                <Typography variant="title">Person placeholder</Typography>
-                <Typography variant="body">
-                  Short profile placeholder for future couple copy.
-                </Typography>
-              </ContentBlock>
-            </Stack>
-          </LuxuryCard>
-        </Grid>
+        </SectionAnimation>
       </Stack>
     </SectionWrapper>
   );
