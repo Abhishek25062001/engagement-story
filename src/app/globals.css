@@ -74,6 +74,55 @@
   --shadow-soft: 0 0.75rem 2rem rgb(34 28 24 / 0.08);
   --shadow-raised: 0 1.25rem 3rem rgb(34 28 24 / 0.12);
   --shadow-inset: inset 0 0 0 1px rgb(184 138 68 / 0.28);
+  --material-paper:
+    linear-gradient(105deg, rgb(255 255 255 / 0.46), transparent 38%),
+    repeating-linear-gradient(
+      96deg,
+      rgb(34 28 24 / 0.007) 0,
+      rgb(34 28 24 / 0.007) 1px,
+      transparent 1px,
+      transparent var(--space-8)
+    ),
+    linear-gradient(145deg, #fffdf8 0%, #fbf3e9 53%, #f5e7da 100%);
+  --material-paper-open:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgb(34 28 24 / 0.026) 50%,
+      transparent 100%
+    ),
+    var(--material-paper);
+  --material-paper-glow:
+    radial-gradient(
+      circle at 30% 16%,
+      rgb(255 255 255 / 0.56),
+      transparent 29%
+    ),
+    linear-gradient(90deg, rgb(255 255 255 / 0.16), transparent 46%);
+  --material-paper-edge: rgb(216 191 174 / 0.6);
+  --material-paper-edge-strong: rgb(216 191 174 / 0.72);
+  --material-foil: rgb(164 116 48 / 0.7);
+  --material-foil-soft: rgb(184 138 68 / 0.42);
+  --material-foil-hairline: linear-gradient(
+    90deg,
+    transparent,
+    rgb(128 87 32 / 0.32),
+    rgb(214 174 100 / 0.62),
+    rgb(128 87 32 / 0.28),
+    transparent
+  );
+  --material-shadow-paper:
+    0 var(--space-8) var(--space-20) rgb(34 28 24 / 0.085),
+    0 var(--space-2) var(--space-8) rgb(34 28 24 / 0.055),
+    inset 0 0 0 1px rgb(255 255 255 / 0.72),
+    inset 0 0 0 var(--space-2) rgb(255 250 247 / 0.24);
+  --material-shadow-cover:
+    0 var(--space-6) var(--space-16) rgb(34 28 24 / 0.1),
+    0 var(--space-2) var(--space-6) rgb(34 28 24 / 0.06),
+    inset 0 0 0 1px rgb(255 255 255 / 0.76),
+    inset 0 0 0 var(--space-2) rgb(255 250 247 / 0.3);
+  --material-emboss:
+    inset 0 0 0 1px rgb(255 255 255 / 0.46), 0 0 0 1px rgb(184 138 68 / 0.035);
 
   --blur-none: 0;
   --blur-sm: 0.25rem;
@@ -288,13 +337,17 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid transparent;
+    border: 1px solid var(--material-paper-edge);
     border-radius: var(--radius-full);
     font-family: var(--font-body);
     font-weight: var(--font-weight-semibold);
-    letter-spacing: var(--letter-spacing-normal);
+    letter-spacing: var(--letter-spacing-wide);
     line-height: var(--line-height-normal);
     text-decoration: none;
+    text-transform: uppercase;
+    box-shadow:
+      inset 0 0 0 1px rgb(255 255 255 / 0.42),
+      0 var(--space-1) var(--space-4) rgb(34 28 24 / 0.035);
     transition:
       background-color var(--motion-duration-base) var(--motion-ease-standard),
       border-color var(--motion-duration-base) var(--motion-ease-standard),
@@ -327,28 +380,31 @@ body {
   }
 
   .ds-button-primary {
-    background: var(--color-accent);
-    color: var(--color-accent-foreground);
+    border-color: var(--material-foil-soft);
+    background: rgb(255 253 248 / 0.72);
+    color: var(--color-accent);
   }
 
   .ds-button-primary:not(:disabled):hover {
-    background: var(--color-accent-hover);
+    border-color: var(--material-foil);
+    background: rgb(255 250 241 / 0.9);
   }
 
   .ds-button-secondary {
-    background: var(--color-accent-soft);
+    background: rgb(255 253 248 / 0.62);
     color: var(--color-accent);
   }
 
   .ds-button-outline {
-    border-color: var(--color-border-strong);
-    background: transparent;
+    border-color: var(--material-foil-soft);
+    background: rgb(255 253 248 / 0.38);
     color: var(--color-foreground);
   }
 
   .ds-button-outline:not(:disabled):hover,
   .ds-button-ghost:not(:disabled):hover {
-    background: var(--color-surface-muted);
+    border-color: var(--material-foil);
+    background: rgb(255 250 241 / 0.72);
   }
 
   .ds-button-ghost {
@@ -357,24 +413,24 @@ body {
   }
 
   .ds-card {
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     color: var(--color-foreground);
   }
 
   .ds-card-paper {
-    border: 1px solid var(--color-border);
-    background: var(--color-surface);
+    border: 1px solid var(--material-paper-edge);
+    background: var(--material-paper);
   }
 
   .ds-card-embossed {
-    border: 1px solid var(--color-border);
-    background: var(--color-surface-raised);
-    box-shadow: var(--shadow-inset);
+    border: 1px solid var(--material-paper-edge);
+    background: var(--material-paper);
+    box-shadow: var(--material-emboss);
   }
 
   .ds-card-gold-outline {
-    border: 1px solid var(--color-gold);
-    background: var(--color-surface);
+    border: 1px solid var(--material-foil-soft);
+    background: var(--material-paper);
   }
 
   .ds-card-minimal {
@@ -383,9 +439,9 @@ body {
   }
 
   .ds-card-elevated {
-    border: 1px solid var(--color-border);
-    background: var(--color-surface-raised);
-    box-shadow: var(--shadow-raised);
+    border: 1px solid var(--material-paper-edge);
+    background: var(--material-paper);
+    box-shadow: var(--material-shadow-paper);
   }
 
   .ds-card-padding-sm {
@@ -418,7 +474,7 @@ body {
   }
 
   .ds-divider-gold {
-    background: var(--color-gold);
+    background: var(--material-foil-hairline);
   }
 
   .cmp-stack {
@@ -751,7 +807,7 @@ body {
     inset: auto 10% calc(var(--space-5) * -1);
     z-index: 0;
     height: var(--space-8);
-    background: rgb(34 28 24 / 0.16);
+    background: rgb(34 28 24 / 0.14);
     filter: blur(var(--blur-lg));
   }
 
@@ -759,9 +815,9 @@ body {
     inset: var(--space-3) calc(var(--space-3) * -1) calc(var(--space-3) * -1)
       var(--space-3);
     z-index: 1;
-    border: 1px solid rgb(216 191 174 / 0.5);
-    background: linear-gradient(145deg, #fffaf2, #f0dfcf);
-    box-shadow: 0 var(--space-3) var(--space-6) rgb(34 28 24 / 0.07);
+    border: 1px solid rgb(216 191 174 / 0.44);
+    background: linear-gradient(145deg, #fff8ef, #efddcd);
+    box-shadow: 0 var(--space-3) var(--space-8) rgb(34 28 24 / 0.055);
   }
 
   .hero-cover-paper {
@@ -771,23 +827,10 @@ body {
     min-height: inherit;
     place-items: center;
     overflow: hidden;
-    border-color: rgb(216 191 174 / 0.7);
+    border-color: var(--material-paper-edge-strong);
     border-radius: var(--radius-xl);
-    background:
-      linear-gradient(100deg, rgb(255 255 255 / 0.52), transparent 34%),
-      repeating-linear-gradient(
-        95deg,
-        rgb(34 28 24 / 0.012) 0,
-        rgb(34 28 24 / 0.012) 1px,
-        transparent 1px,
-        transparent var(--space-4)
-      ),
-      linear-gradient(145deg, #fffdf8 0%, #fbf3e9 50%, #f5e7da 100%);
-    box-shadow:
-      0 var(--space-6) var(--space-16) rgb(34 28 24 / 0.12),
-      0 var(--space-2) var(--space-6) rgb(34 28 24 / 0.08),
-      inset 0 0 0 1px rgb(255 255 255 / 0.76),
-      inset 0 0 0 var(--space-2) rgb(255 250 247 / 0.32);
+    background: var(--material-paper);
+    box-shadow: var(--material-shadow-cover);
   }
 
   .hero-cover-paper::before,
@@ -799,30 +842,15 @@ body {
 
   .hero-cover-paper::before {
     inset: var(--space-4);
-    border: 1px solid rgb(184 138 68 / 0.48);
+    border: 1px solid var(--material-foil-soft);
     border-radius: calc(var(--radius-xl) - var(--space-2));
-    box-shadow:
-      inset 0 0 0 1px rgb(255 255 255 / 0.46),
-      0 0 0 1px rgb(184 138 68 / 0.04);
+    box-shadow: var(--material-emboss);
   }
 
   .hero-cover-paper::after {
     inset: 0;
-    background:
-      radial-gradient(
-        circle at 32% 18%,
-        rgb(255 255 255 / 0.72),
-        transparent 28%
-      ),
-      linear-gradient(90deg, rgb(255 255 255 / 0.22), transparent 46%),
-      repeating-linear-gradient(
-        100deg,
-        rgb(34 28 24 / 0.012) 0,
-        rgb(34 28 24 / 0.012) 1px,
-        transparent 1px,
-        transparent var(--space-5)
-      );
-    opacity: 0.72;
+    background: var(--material-paper-glow);
+    opacity: 0.62;
     mix-blend-mode: multiply;
   }
 
@@ -831,7 +859,7 @@ body {
     z-index: 3;
     width: var(--space-8);
     height: var(--space-8);
-    border-color: rgb(184 138 68 / 0.54);
+    border-color: var(--material-foil-soft);
     pointer-events: none;
   }
 
@@ -913,12 +941,7 @@ body {
     display: block;
     width: var(--space-12);
     height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgb(184 138 68 / 0.62),
-      transparent
-    );
+    background: var(--material-foil-hairline);
   }
 
   .hero-cover-body {
@@ -944,12 +967,7 @@ body {
     display: block;
     width: var(--space-10);
     height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgb(184 138 68 / 0.42),
-      transparent
-    );
+    background: var(--material-foil-hairline);
   }
 
   .invitation-spread-section {
@@ -983,15 +1001,15 @@ body {
 
   .invitation-spread-section::before {
     background:
-      linear-gradient(90deg, transparent, rgb(34 28 24 / 0.035), transparent),
+      linear-gradient(90deg, transparent, rgb(34 28 24 / 0.026), transparent),
       repeating-linear-gradient(
         96deg,
-        rgb(34 28 24 / 0.012) 0,
-        rgb(34 28 24 / 0.012) 1px,
+        rgb(34 28 24 / 0.006) 0,
+        rgb(34 28 24 / 0.006) 1px,
         transparent 1px,
-        transparent var(--space-5)
+        transparent var(--space-8)
       );
-    opacity: 0.52;
+    opacity: 0.5;
   }
 
   .invitation-spread-section::after {
@@ -1012,29 +1030,10 @@ body {
     width: min(100%, 54rem);
     min-height: clamp(42rem, 76svh, 50rem);
     overflow: hidden;
-    border-color: rgb(216 191 174 / 0.68);
+    border-color: var(--material-paper-edge-strong);
     border-radius: var(--radius-xl);
-    background:
-      linear-gradient(
-        90deg,
-        transparent 0%,
-        rgb(34 28 24 / 0.035) 50%,
-        transparent 100%
-      ),
-      linear-gradient(100deg, rgb(255 255 255 / 0.56), transparent 34%),
-      repeating-linear-gradient(
-        94deg,
-        rgb(34 28 24 / 0.012) 0,
-        rgb(34 28 24 / 0.012) 1px,
-        transparent 1px,
-        transparent var(--space-4)
-      ),
-      linear-gradient(145deg, #fffdf8 0%, #fbf3e9 52%, #f5e7da 100%);
-    box-shadow:
-      0 var(--space-8) var(--space-20) rgb(34 28 24 / 0.11),
-      0 var(--space-2) var(--space-8) rgb(34 28 24 / 0.08),
-      inset 0 0 0 1px rgb(255 255 255 / 0.72),
-      inset 0 0 0 var(--space-2) rgb(255 250 247 / 0.28);
+    background: var(--material-paper-open);
+    box-shadow: var(--material-shadow-paper);
   }
 
   .invitation-spread::before,
@@ -1046,23 +1045,15 @@ body {
 
   .invitation-spread::before {
     inset: var(--space-5);
-    border: 1px solid rgb(184 138 68 / 0.34);
+    border: 1px solid var(--material-foil-soft);
     border-radius: calc(var(--radius-xl) - var(--space-2));
-    box-shadow:
-      inset 0 0 0 1px rgb(255 255 255 / 0.42),
-      0 0 0 1px rgb(184 138 68 / 0.035);
+    box-shadow: var(--material-emboss);
   }
 
   .invitation-spread::after {
     inset: 0;
-    background:
-      radial-gradient(
-        circle at 30% 16%,
-        rgb(255 255 255 / 0.68),
-        transparent 27%
-      ),
-      linear-gradient(90deg, rgb(255 255 255 / 0.2), transparent 44%);
-    opacity: 0.58;
+    background: var(--material-paper-glow);
+    opacity: 0.56;
     mix-blend-mode: multiply;
   }
 
@@ -1075,9 +1066,9 @@ body {
     background: linear-gradient(
       180deg,
       transparent,
-      rgb(184 138 68 / 0.22) 18%,
-      rgb(34 28 24 / 0.08) 50%,
-      rgb(184 138 68 / 0.18) 82%,
+      rgb(184 138 68 / 0.18) 18%,
+      rgb(34 28 24 / 0.065) 50%,
+      rgb(184 138 68 / 0.15) 82%,
       transparent
     );
     transform: translateX(-50%);
@@ -1088,7 +1079,7 @@ body {
     z-index: 3;
     width: var(--space-10);
     height: var(--space-10);
-    border-color: rgb(184 138 68 / 0.5);
+    border-color: var(--material-foil-soft);
     pointer-events: none;
   }
 
@@ -1162,12 +1153,7 @@ body {
 
   .invitation-spread-divider {
     width: min(100%, var(--space-24));
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgb(184 138 68 / 0.58),
-      transparent
-    );
+    background: var(--material-foil-hairline);
   }
 
   .invitation-spread-divider-short {
@@ -1255,13 +1241,13 @@ body {
     background:
       repeating-linear-gradient(
         94deg,
-        rgb(34 28 24 / 0.01) 0,
-        rgb(34 28 24 / 0.01) 1px,
+        rgb(34 28 24 / 0.006) 0,
+        rgb(34 28 24 / 0.006) 1px,
         transparent 1px,
-        transparent var(--space-5)
+        transparent var(--space-8)
       ),
       radial-gradient(ellipse at 50% 88%, rgb(86 65 48 / 0.07), transparent 48%);
-    opacity: 0.68;
+    opacity: 0.58;
   }
 
   .story-section::after {
@@ -1321,12 +1307,7 @@ body {
 
   .story-divider {
     width: min(100%, var(--space-24));
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgb(184 138 68 / 0.56),
-      transparent
-    );
+    background: var(--material-foil-hairline);
   }
 
   .story-divider-short {
@@ -1337,23 +1318,10 @@ body {
     position: relative;
     width: min(100%, 48rem);
     overflow: hidden;
-    border-color: rgb(216 191 174 / 0.62);
+    border-color: var(--material-paper-edge);
     border-radius: var(--radius-xl);
-    background:
-      linear-gradient(105deg, rgb(255 255 255 / 0.5), transparent 36%),
-      repeating-linear-gradient(
-        96deg,
-        rgb(34 28 24 / 0.011) 0,
-        rgb(34 28 24 / 0.011) 1px,
-        transparent 1px,
-        transparent var(--space-4)
-      ),
-      linear-gradient(145deg, #fffdf8 0%, #fbf3e9 54%, #f5e7da 100%);
-    box-shadow:
-      0 var(--space-6) var(--space-16) rgb(34 28 24 / 0.09),
-      0 var(--space-2) var(--space-8) rgb(34 28 24 / 0.06),
-      inset 0 0 0 1px rgb(255 255 255 / 0.7),
-      inset 0 0 0 var(--space-2) rgb(255 250 247 / 0.24);
+    background: var(--material-paper);
+    box-shadow: var(--material-shadow-paper);
   }
 
   .story-insert::before,
@@ -1365,20 +1333,15 @@ body {
 
   .story-insert::before {
     inset: var(--space-5);
-    border: 1px solid rgb(184 138 68 / 0.3);
+    border: 1px solid rgb(184 138 68 / 0.28);
     border-radius: calc(var(--radius-xl) - var(--space-2));
+    box-shadow: var(--material-emboss);
   }
 
   .story-insert::after {
     inset: 0;
-    background:
-      radial-gradient(
-        circle at 28% 18%,
-        rgb(255 255 255 / 0.58),
-        transparent 28%
-      ),
-      linear-gradient(90deg, rgb(255 255 255 / 0.18), transparent 44%);
-    opacity: 0.56;
+    background: var(--material-paper-glow);
+    opacity: 0.52;
     mix-blend-mode: multiply;
   }
 
@@ -1392,7 +1355,7 @@ body {
     z-index: 3;
     width: var(--space-8);
     height: var(--space-8);
-    border-color: rgb(184 138 68 / 0.46);
+    border-color: var(--material-foil-soft);
     pointer-events: none;
   }
 
@@ -1447,7 +1410,9 @@ body {
     background: linear-gradient(
       180deg,
       transparent,
-      rgb(184 138 68 / 0.32),
+      rgb(128 87 32 / 0.16),
+      rgb(214 174 100 / 0.38),
+      rgb(128 87 32 / 0.14),
       transparent
     );
     content: "";
@@ -1458,16 +1423,17 @@ body {
     width: var(--space-20);
     height: var(--space-20);
     place-items: center;
-    border: 1px solid rgb(184 138 68 / 0.42);
+    border: 1px solid var(--material-foil-soft);
     border-radius: var(--radius-full);
-    color: var(--color-gold);
+    color: rgb(128 87 32 / 0.78);
     font-family: var(--font-display);
     font-size: 1.15rem;
     letter-spacing: var(--letter-spacing-wide);
     line-height: var(--line-height-tight);
     box-shadow:
-      inset 0 0 0 1px rgb(255 255 255 / 0.44),
-      0 var(--space-2) var(--space-6) rgb(34 28 24 / 0.05);
+      inset 0 0 0 1px rgb(255 255 255 / 0.5),
+      inset 0 0 var(--space-4) rgb(184 138 68 / 0.045),
+      0 var(--space-2) var(--space-6) rgb(34 28 24 / 0.04);
   }
 
   .story-person-name {
@@ -1546,7 +1512,9 @@ body {
     background: linear-gradient(
       180deg,
       transparent,
-      rgb(184 138 68 / 0.26),
+      rgb(128 87 32 / 0.12),
+      rgb(214 174 100 / 0.32),
+      rgb(128 87 32 / 0.12),
       transparent
     );
     content: "";
