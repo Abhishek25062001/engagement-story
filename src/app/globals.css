@@ -1236,6 +1236,12 @@ body {
       linear-gradient(135deg, #fff8ef 0%, #f8eee5 54%, #efe1d6 100%);
   }
 
+  .invitation-spread-section + .story-section,
+  .story-section + .story-section {
+    margin-block-start: calc(var(--space-10) * -1);
+    padding-block-start: clamp(var(--space-20), 12vw, var(--space-24));
+  }
+
   .story-section::before,
   .story-section::after {
     position: absolute;

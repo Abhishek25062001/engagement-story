@@ -18,7 +18,7 @@ export function RSVPSection() {
           </Stack>
         </SectionAnimation>
 
-        <SectionAnimation variant="reveal">
+        <SectionAnimation variant="fadeUp">
           <LuxuryCard
             as="article"
             aria-labelledby="rsvp-title"

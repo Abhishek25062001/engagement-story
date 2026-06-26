@@ -18,7 +18,7 @@ export function CoupleSection() {
           </Stack>
         </SectionAnimation>
 
-        <SectionAnimation variant="reveal">
+        <SectionAnimation variant="fadeUp">
           <LuxuryCard
             as="article"
             aria-labelledby="couple-title"
