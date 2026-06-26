@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 import { Container } from "@/components/layout/Container";
+import { Typography } from "@/components/ui/Typography";
+import { cn } from "@/lib/cn";
 
 type SectionWrapperProps = Readonly<{
   children: ReactNode;
@@ -13,12 +15,11 @@ export function SectionWrapper({
   id,
 }: SectionWrapperProps) {
   return (
-    <section
-      id={id}
-      className={`border-b border-border py-[var(--space-section)] ${className}`.trim()}
-    >
+    <section id={id} className={cn("ds-section", className)}>
       <Container>
-        <h2 className="type-section-title">{children}</h2>
+        <Typography as="h2" variant="heading">
+          {children}
+        </Typography>
       </Container>
     </section>
   );

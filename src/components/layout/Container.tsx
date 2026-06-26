@@ -1,4 +1,5 @@
 import type { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
+import { cn } from "@/lib/cn";
 
 type ContainerProps<TElement extends ElementType = "div"> = {
   as?: TElement;
@@ -15,10 +16,7 @@ export function Container<TElement extends ElementType = "div">({
   const Component = as ?? "div";
 
   return (
-    <Component
-      className={`mx-auto w-full max-w-[var(--container-max)] px-6 sm:px-8 lg:px-10 ${className}`.trim()}
-      {...props}
-    >
+    <Component className={cn("ds-container", className)} {...props}>
       {children}
     </Component>
   );
