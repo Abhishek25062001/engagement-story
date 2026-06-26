@@ -12,6 +12,7 @@ import {
   sectionTransition,
   setupGsap,
 } from "@/lib/animation";
+import { prefersReducedMotion } from "@/lib/animation/reducedMotion";
 
 type SectionAnimationVariant =
   | "fade"
@@ -55,6 +56,10 @@ export function SectionAnimation({
     const root = rootRef.current;
 
     if (!root) {
+      return;
+    }
+
+    if (prefersReducedMotion()) {
       return;
     }
 

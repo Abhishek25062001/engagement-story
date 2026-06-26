@@ -277,6 +277,7 @@ body {
     inset: 0;
     z-index: 2;
     overflow: hidden;
+    contain: layout paint style;
     pointer-events: none;
   }
 
@@ -286,7 +287,6 @@ body {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    will-change: transform, opacity;
   }
 
   .ambient-world-light {
@@ -302,9 +302,9 @@ body {
         transparent 38%,
         rgb(92 63 36 / 0.035) 100%
       );
-    mix-blend-mode: soft-light;
     opacity: 0.56;
     transform: translate3d(0, 0, 0);
+    will-change: transform, opacity;
     animation: ambient-light-breath 18s var(--motion-ease-standard) infinite;
   }
 
@@ -321,7 +321,6 @@ body {
         transparent 30%,
         rgb(34 28 24 / 0.035)
       );
-    mix-blend-mode: multiply;
     opacity: 0.62;
   }
 
@@ -341,7 +340,6 @@ body {
         transparent 1px,
         transparent var(--space-16)
       );
-    mix-blend-mode: multiply;
     opacity: 0.34;
   }
 
@@ -455,7 +453,7 @@ body {
   }
 
   .ds-button-sm {
-    min-height: var(--space-10);
+    min-height: calc(var(--space-10) + var(--space-1));
     padding-inline: var(--space-4);
     font-size: var(--font-size-label);
   }
