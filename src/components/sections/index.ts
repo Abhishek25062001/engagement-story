@@ -5,4 +5,5 @@ export { FamiliesSection } from "@/components/sections/FamiliesSection";
 export { HeroSection } from "@/components/sections/HeroSection";
 export { InvitationSection } from "@/components/sections/InvitationSection";
 export { RSVPSection } from "@/components/sections/RSVPSection";
+export { SectionPlaceholder } from "@/components/sections/SectionPlaceholder";
 export { VenueSection } from "@/components/sections/VenueSection";

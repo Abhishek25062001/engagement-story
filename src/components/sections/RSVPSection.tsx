@@ -1,5 +1,5 @@
-import { SectionWrapper } from "@/components/layout/SectionWrapper";
+import { SectionPlaceholder } from "@/components/sections/SectionPlaceholder";
 
 export function RSVPSection() {
-  return <SectionWrapper id="rsvp">RSVPSection</SectionWrapper>;
+  return <SectionPlaceholder id="rsvp" name="RSVPSection" />;
 }

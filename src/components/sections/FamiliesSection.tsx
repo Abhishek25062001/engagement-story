@@ -1,5 +1,5 @@
-import { SectionWrapper } from "@/components/layout/SectionWrapper";
+import { SectionPlaceholder } from "@/components/sections/SectionPlaceholder";
 
 export function FamiliesSection() {
-  return <SectionWrapper id="families">FamiliesSection</SectionWrapper>;
+  return <SectionPlaceholder id="families" name="FamiliesSection" />;
 }

@@ -1,5 +1,5 @@
-import { SectionWrapper } from "@/components/layout/SectionWrapper";
+import { SectionPlaceholder } from "@/components/sections/SectionPlaceholder";
 
 export function BlessingSection() {
-  return <SectionWrapper id="blessing">BlessingSection</SectionWrapper>;
+  return <SectionPlaceholder id="blessing" name="BlessingSection" />;
 }
