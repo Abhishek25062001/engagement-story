@@ -39,6 +39,11 @@ export function CoupleSection() {
               aria-hidden="true"
               className="story-insert-corner bottom-right"
             />
+            <span aria-hidden="true" className="identity-seal story-seal">
+              <span>S</span>
+              <span>&amp;</span>
+              <span>H</span>
+            </span>
 
             <Grid className="story-couple-grid" columns="two">
               <Stack className="story-person" gap="md">

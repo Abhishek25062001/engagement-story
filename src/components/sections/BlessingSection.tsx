@@ -31,6 +31,11 @@ export function BlessingSection() {
               aria-hidden="true"
               className="story-insert-corner bottom-right"
             />
+            <span aria-hidden="true" className="identity-seal story-seal">
+              <span>S</span>
+              <span>&amp;</span>
+              <span>H</span>
+            </span>
 
             <Stack className="story-closing-content" gap="xl">
               <Stack className="story-blessing-message" gap="md">
@@ -49,14 +54,16 @@ export function BlessingSection() {
                   tone="gold"
                 />
                 <Typography className="story-blessing-copy" variant="body">
-                  May this engagement be blessed with joy, togetherness, and the
-                  warmth of every loved one gathered in celebration.
+                  Your blessings make this day warmer. Thank you for being part
+                  of Sudesh and Hemlata&apos;s beginning.
                 </Typography>
               </Stack>
 
               <Stack className="story-blessing-signoff" gap="xs">
                 <Typography variant="overline">Best wishes from</Typography>
-                <Typography variant="title">Both Families</Typography>
+                <Typography variant="title">
+                  Sudesh&apos;s family and Hemlata&apos;s family
+                </Typography>
               </Stack>
             </Stack>
           </LuxuryCard>

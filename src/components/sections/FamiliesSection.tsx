@@ -42,6 +42,11 @@ export function FamiliesSection() {
               aria-hidden="true"
               className="story-insert-corner bottom-right"
             />
+            <span aria-hidden="true" className="identity-seal story-seal">
+              <span>S</span>
+              <span>&amp;</span>
+              <span>H</span>
+            </span>
 
             <Typography
               as="h2"
@@ -54,7 +59,9 @@ export function FamiliesSection() {
 
             <Grid className="story-family-grid" columns="two">
               <Stack className="story-family-group" gap="md">
-                <Typography variant="overline">Groom&apos;s Family</Typography>
+                <Typography variant="overline">
+                  Blessings from Sudesh&apos;s family
+                </Typography>
                 <Divider
                   className="story-divider story-divider-short"
                   decorative
@@ -71,7 +78,9 @@ export function FamiliesSection() {
               </Stack>
 
               <Stack className="story-family-group" gap="md">
-                <Typography variant="overline">Bride&apos;s Family</Typography>
+                <Typography variant="overline">
+                  Blessings from Hemlata&apos;s family
+                </Typography>
                 <Divider
                   className="story-divider story-divider-short"
                   decorative

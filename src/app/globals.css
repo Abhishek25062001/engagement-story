@@ -818,6 +818,47 @@ body {
     --aspect-ratio: var(--aspect-wide);
   }
 
+  .identity-seal {
+    display: inline-grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    min-width: var(--space-16);
+    padding-block: var(--space-1);
+    padding-inline: var(--space-3);
+    border-block: 1px solid rgb(184 138 68 / 0.24);
+    color: rgb(128 87 32 / 0.72);
+    font-family: var(--font-display);
+    font-size: 0.74rem;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: 0.16em;
+    line-height: var(--line-height-tight);
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .identity-seal span:nth-child(2) {
+    padding-inline: var(--space-2);
+    color: rgb(164 116 48 / 0.58);
+    font-size: 0.82em;
+    font-style: italic;
+    letter-spacing: var(--letter-spacing-normal);
+  }
+
+  .invitation-seal {
+    position: absolute;
+    z-index: 3;
+    top: var(--space-10);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .story-seal {
+    position: relative;
+    z-index: 3;
+    margin-inline: auto;
+    margin-block-end: var(--space-8);
+  }
+
   .hero-scene {
     position: relative;
     isolation: isolate;

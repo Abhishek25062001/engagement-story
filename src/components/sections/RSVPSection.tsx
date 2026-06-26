@@ -39,6 +39,11 @@ export function RSVPSection() {
               aria-hidden="true"
               className="story-insert-corner bottom-right"
             />
+            <span aria-hidden="true" className="identity-seal story-seal">
+              <span>S</span>
+              <span>&amp;</span>
+              <span>H</span>
+            </span>
 
             <Stack className="story-closing-content" gap="lg">
               <Typography

@@ -42,6 +42,11 @@ export function EventSection() {
               aria-hidden="true"
               className="story-insert-corner bottom-right"
             />
+            <span aria-hidden="true" className="identity-seal story-seal">
+              <span>S</span>
+              <span>&amp;</span>
+              <span>H</span>
+            </span>
 
             <Stack className="story-event-content" gap="xl">
               <Typography
@@ -74,7 +79,7 @@ export function EventSection() {
                 <Typography variant="overline">Venue</Typography>
                 <Typography variant="title">Ghar</Typography>
                 <Typography className="story-section-copy" variant="body">
-                  WZ-23, Phase 3, Om Vihar
+                  WZ-23 Phase 3, Om Vihar
                 </Typography>
               </Stack>
             </Stack>

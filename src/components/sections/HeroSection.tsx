@@ -36,6 +36,11 @@ export function HeroSection() {
             />
             <Stack className="hero-cover-content" gap="lg">
               <Stack className="hero-cover-primary" gap="md">
+                <span aria-hidden="true" className="identity-seal">
+                  <span>S</span>
+                  <span>&amp;</span>
+                  <span>H</span>
+                </span>
                 <Typography className="hero-cover-preface" variant="overline">
                   Together with our families
                 </Typography>

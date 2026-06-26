@@ -31,6 +31,11 @@ export function InvitationSection() {
             aria-hidden="true"
             className="invitation-spread-corner bottom-right"
           />
+          <span aria-hidden="true" className="identity-seal invitation-seal">
+            <span>S</span>
+            <span>&amp;</span>
+            <span>H</span>
+          </span>
 
           <Stack className="invitation-spread-content" gap="xl">
             <SectionAnimation variant="fadeUp">
@@ -115,7 +120,7 @@ export function InvitationSection() {
                     className="invitation-spread-address"
                     variant="body"
                   >
-                    WZ-23, Phase 3,
+                    WZ-23 Phase 3,
                     <br />
                     Om Vihar
                   </Typography>

@@ -39,6 +39,11 @@ export function VenueSection() {
               aria-hidden="true"
               className="story-insert-corner bottom-right"
             />
+            <span aria-hidden="true" className="identity-seal story-seal">
+              <span>S</span>
+              <span>&amp;</span>
+              <span>H</span>
+            </span>
 
             <Stack className="story-closing-content" gap="lg">
               <Typography variant="overline">Venue</Typography>
@@ -56,7 +61,7 @@ export function VenueSection() {
                 tone="gold"
               />
               <Typography className="story-closing-address" variant="body">
-                WZ-23, Phase 3,
+                WZ-23 Phase 3,
                 <br />
                 Om Vihar
               </Typography>
