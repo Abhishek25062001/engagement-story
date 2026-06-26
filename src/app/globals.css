@@ -1656,6 +1656,11 @@ body {
     text-align: center;
   }
 
+  .story-family-group .ds-typography-overline {
+    max-width: 18rem;
+    text-wrap: balance;
+  }
+
   .story-family-list {
     padding: 0;
     margin: 0;
@@ -1742,7 +1747,9 @@ body {
   }
 
   .story-blessing-signoff .ds-typography-title {
+    max-width: 26rem;
     color: var(--color-foreground);
+    text-wrap: balance;
   }
 }
 

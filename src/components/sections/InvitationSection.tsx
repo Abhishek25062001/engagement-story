@@ -1,7 +1,13 @@
 import { SectionAnimation } from "@/components/animation";
 import { Cluster, Stack } from "@/components/composition";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
-import { Button, Divider, LuxuryCard, Typography } from "@/components/ui";
+import {
+  Button,
+  Divider,
+  IdentitySeal,
+  LuxuryCard,
+  Typography,
+} from "@/components/ui";
 
 export function InvitationSection() {
   return (
@@ -31,11 +37,7 @@ export function InvitationSection() {
             aria-hidden="true"
             className="invitation-spread-corner bottom-right"
           />
-          <span aria-hidden="true" className="identity-seal invitation-seal">
-            <span>S</span>
-            <span>&amp;</span>
-            <span>H</span>
-          </span>
+          <IdentitySeal className="invitation-seal" />
 
           <Stack className="invitation-spread-content" gap="xl">
             <SectionAnimation variant="fadeUp">

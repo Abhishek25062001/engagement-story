@@ -1,7 +1,7 @@
 import { SectionAnimation } from "@/components/animation";
 import { Grid, Stack } from "@/components/composition";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
-import { Divider, LuxuryCard, Typography } from "@/components/ui";
+import { Divider, IdentitySeal, LuxuryCard, Typography } from "@/components/ui";
 
 export function CoupleSection() {
   return (
@@ -39,11 +39,7 @@ export function CoupleSection() {
               aria-hidden="true"
               className="story-insert-corner bottom-right"
             />
-            <span aria-hidden="true" className="identity-seal story-seal">
-              <span>S</span>
-              <span>&amp;</span>
-              <span>H</span>
-            </span>
+            <IdentitySeal className="story-seal" />
 
             <Grid className="story-couple-grid" columns="two">
               <Stack className="story-person" gap="md">

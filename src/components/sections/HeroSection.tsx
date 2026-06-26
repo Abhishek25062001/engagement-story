@@ -1,6 +1,7 @@
 import { Cluster, Frame, Stack, Surface } from "@/components/composition";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
 import { HeroOpeningInteraction } from "@/components/sections/HeroOpeningInteraction";
+import { IdentitySeal } from "@/components/ui";
 import { Typography } from "@/components/ui/Typography";
 
 export function HeroSection() {
@@ -36,11 +37,7 @@ export function HeroSection() {
             />
             <Stack className="hero-cover-content" gap="lg">
               <Stack className="hero-cover-primary" gap="md">
-                <span aria-hidden="true" className="identity-seal">
-                  <span>S</span>
-                  <span>&amp;</span>
-                  <span>H</span>
-                </span>
+                <IdentitySeal />
                 <Typography className="hero-cover-preface" variant="overline">
                   Together with our families
                 </Typography>

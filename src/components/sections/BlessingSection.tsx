@@ -1,7 +1,7 @@
 import { SectionAnimation } from "@/components/animation";
 import { Stack } from "@/components/composition";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
-import { Divider, LuxuryCard, Typography } from "@/components/ui";
+import { Divider, IdentitySeal, LuxuryCard, Typography } from "@/components/ui";
 
 export function BlessingSection() {
   return (
@@ -31,11 +31,7 @@ export function BlessingSection() {
               aria-hidden="true"
               className="story-insert-corner bottom-right"
             />
-            <span aria-hidden="true" className="identity-seal story-seal">
-              <span>S</span>
-              <span>&amp;</span>
-              <span>H</span>
-            </span>
+            <IdentitySeal className="story-seal" />
 
             <Stack className="story-closing-content" gap="xl">
               <Stack className="story-blessing-message" gap="md">

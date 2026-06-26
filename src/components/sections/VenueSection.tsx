@@ -1,7 +1,13 @@
 import { SectionAnimation } from "@/components/animation";
 import { Cluster, Stack } from "@/components/composition";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
-import { Button, Divider, LuxuryCard, Typography } from "@/components/ui";
+import {
+  Button,
+  Divider,
+  IdentitySeal,
+  LuxuryCard,
+  Typography,
+} from "@/components/ui";
 
 export function VenueSection() {
   return (
@@ -39,11 +45,7 @@ export function VenueSection() {
               aria-hidden="true"
               className="story-insert-corner bottom-right"
             />
-            <span aria-hidden="true" className="identity-seal story-seal">
-              <span>S</span>
-              <span>&amp;</span>
-              <span>H</span>
-            </span>
+            <IdentitySeal className="story-seal" />
 
             <Stack className="story-closing-content" gap="lg">
               <Typography variant="overline">Venue</Typography>
