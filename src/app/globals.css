@@ -1274,6 +1274,10 @@ body {
   .story-event-content,
   .story-event-line,
   .story-event-venue,
+  .story-closing-content,
+  .story-rsvp-contact,
+  .story-blessing-message,
+  .story-blessing-signoff,
   .story-family-group {
     align-items: center;
   }
@@ -1556,6 +1560,84 @@ body {
     color: var(--color-foreground);
     font-size: clamp(1.25rem, 2.4vw, 1.7rem);
   }
+
+  .story-section-blessing {
+    padding-block-end: clamp(
+      var(--space-20),
+      14vw,
+      calc(var(--space-24) * 1.4)
+    );
+  }
+
+  .story-section-blessing::after {
+    inset-block: auto var(--space-12);
+    background: rgb(34 28 24 / 0.055);
+  }
+
+  .story-closing-insert {
+    width: min(100%, 42rem);
+    padding-block: clamp(var(--space-12), 7vw, var(--space-20));
+  }
+
+  .story-closing-content {
+    max-width: 30rem;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .story-closing-content .ds-typography-overline {
+    color: var(--color-gold);
+    font-size: 0.7rem;
+    letter-spacing: 0.17em;
+  }
+
+  .story-closing-title {
+    max-width: 10ch;
+    color: var(--color-foreground);
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-tight);
+    text-wrap: balance;
+  }
+
+  .story-closing-address {
+    color: var(--color-foreground-soft);
+    font-size: clamp(1rem, 1.5vw, 1.12rem);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .story-rsvp-contact .ds-typography-title {
+    color: var(--color-foreground);
+    font-size: clamp(1.35rem, 2.6vw, 1.85rem);
+  }
+
+  .story-rsvp-phone {
+    color: var(--color-gold);
+    letter-spacing: var(--letter-spacing-wider);
+  }
+
+  .story-blessing-insert {
+    width: min(100%, 46rem);
+  }
+
+  .story-blessing-title {
+    color: var(--color-foreground);
+    font-size: clamp(3rem, 8vw, 5.6rem);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-tight);
+  }
+
+  .story-blessing-copy {
+    max-width: 34rem;
+    color: var(--color-foreground-soft);
+    font-size: clamp(1rem, 1.5vw, 1.12rem);
+    line-height: var(--line-height-relaxed);
+    text-wrap: balance;
+  }
+
+  .story-blessing-signoff .ds-typography-title {
+    color: var(--color-foreground);
+  }
 }
 
 @media (min-width: 40rem) {
@@ -1580,7 +1662,8 @@ body {
   }
 
   .story-event-insert,
-  .story-families-insert {
+  .story-families-insert,
+  .story-closing-insert {
     width: min(92vw, 50rem);
   }
 }

@@ -1,32 +1,73 @@
-import {
-  ContentBlock,
-  MediaBlock,
-  SectionHeader,
-  Split,
-  Stack,
-} from "@/components/composition";
+import { SectionAnimation } from "@/components/animation";
+import { Cluster, Stack } from "@/components/composition";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
-import { LuxuryCard, Typography } from "@/components/ui";
+import { Button, Divider, LuxuryCard, Typography } from "@/components/ui";
 
 export function VenueSection() {
   return (
-    <SectionWrapper id="venue">
-      <Stack gap="lg">
-        <SectionHeader eyebrow="Venue" title="VenueSection" />
-        <Split align="start" ratio="majorEnd">
-          <LuxuryCard variant="goldOutline">
-            <ContentBlock>
-              <Typography variant="overline">Address</Typography>
-              <Typography variant="title">Venue address placeholder</Typography>
-              <Typography variant="body">
-                Address, access notes, and nearby landmark placeholder.
+    <SectionWrapper id="venue" className="story-section story-section-venue">
+      <Stack className="story-insert-shell" gap="xl">
+        <SectionAnimation variant="fadeUp">
+          <Stack className="story-section-intro" gap="sm">
+            <Typography variant="overline">Venue</Typography>
+            <Divider className="story-divider" decorative tone="gold" />
+            <Typography className="story-section-copy" variant="body">
+              The celebration gathers at home, held close by family and the
+              warmth of a familiar place.
+            </Typography>
+          </Stack>
+        </SectionAnimation>
+
+        <SectionAnimation variant="fadeUp">
+          <LuxuryCard
+            as="article"
+            aria-labelledby="venue-title"
+            className="story-insert story-closing-insert story-venue-insert"
+            padding="lg"
+            variant="paper"
+          >
+            <span aria-hidden="true" className="story-insert-corner top-left" />
+            <span
+              aria-hidden="true"
+              className="story-insert-corner top-right"
+            />
+            <span
+              aria-hidden="true"
+              className="story-insert-corner bottom-left"
+            />
+            <span
+              aria-hidden="true"
+              className="story-insert-corner bottom-right"
+            />
+
+            <Stack className="story-closing-content" gap="lg">
+              <Typography variant="overline">Venue</Typography>
+              <Typography
+                as="h2"
+                className="story-closing-title"
+                id="venue-title"
+                variant="heading"
+              >
+                Ghar
               </Typography>
-            </ContentBlock>
+              <Divider
+                className="story-divider story-divider-short"
+                decorative
+                tone="gold"
+              />
+              <Typography className="story-closing-address" variant="body">
+                WZ-23, Phase 3,
+                <br />
+                Om Vihar
+              </Typography>
+              <Cluster justify="center">
+                <Button size="sm" variant="outline">
+                  View on Maps
+                </Button>
+              </Cluster>
+            </Stack>
           </LuxuryCard>
-          <MediaBlock>
-            <Typography variant="caption">Map placeholder</Typography>
-          </MediaBlock>
-        </Split>
+        </SectionAnimation>
       </Stack>
     </SectionWrapper>
   );
