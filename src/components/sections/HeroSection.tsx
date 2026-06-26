@@ -16,10 +16,26 @@ export function HeroSection() {
           <span aria-hidden="true" className="hero-cover-shadow" />
           <span aria-hidden="true" className="hero-cover-inner-layer" />
           <Frame className="hero-cover-paper" variant="paper">
+            <span
+              aria-hidden="true"
+              className="hero-cover-corner hero-cover-corner-top-left"
+            />
+            <span
+              aria-hidden="true"
+              className="hero-cover-corner hero-cover-corner-top-right"
+            />
+            <span
+              aria-hidden="true"
+              className="hero-cover-corner hero-cover-corner-bottom-left"
+            />
+            <span
+              aria-hidden="true"
+              className="hero-cover-corner hero-cover-corner-bottom-right"
+            />
             <Stack className="hero-cover-content" gap="lg">
               <Stack className="hero-cover-primary" gap="md">
-                <Typography className="hero-cover-eyebrow" variant="overline">
-                  Handcrafted Invitation
+                <Typography className="hero-cover-preface" variant="overline">
+                  Together with our families
                 </Typography>
                 <Typography
                   as="h1"
@@ -27,15 +43,19 @@ export function HeroSection() {
                   id="hero-cover-title"
                   variant="display"
                 >
-                  Engagement Invitation
+                  <span>Sudesh</span>
+                  <span className="hero-cover-ampersand">&amp;</span>
+                  <span>Hemlata</span>
                 </Typography>
+                <span aria-hidden="true" className="hero-cover-divider" />
                 <Typography className="hero-cover-body" variant="body">
-                  Cover message placeholder for a private celebration.
+                  request the honour of your presence at their Engagement
+                  Ceremony
                 </Typography>
               </Stack>
               <Stack className="hero-cover-footer" gap="xs">
-                <Typography variant="caption">Names Placeholder</Typography>
-                <Typography variant="caption">Date Placeholder</Typography>
+                <Typography variant="caption">12 July 2026</Typography>
+                <Typography variant="caption">Sunday • 12:00 PM</Typography>
               </Stack>
             </Stack>
           </Frame>
@@ -43,7 +63,7 @@ export function HeroSection() {
 
         <Cluster className="hero-open-cue" justify="center" gap="sm">
           <span aria-hidden="true" className="hero-open-cue-line" />
-          <Typography variant="label">Open invitation</Typography>
+          <Typography variant="label">Open the cover</Typography>
           <span aria-hidden="true" className="hero-open-cue-line" />
         </Cluster>
       </Stack>
